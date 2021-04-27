@@ -1,0 +1,176 @@
+{
+  "root": true,
+  "ignorePatterns": [
+    "src/environments/environment.ts"
+  ],
+  "overrides": [
+    {
+      "files": ["*.ts"],
+      "extends": [
+        "plugin:@angular-eslint/recommended",
+        "plugin:jsdoc/recommended"
+      ],
+      "parserOptions": {
+        "project": [
+          "tsconfig.json"
+        ],
+        "createDefaultProgram": true
+      },
+      "plugins": [
+        "prefer-arrow",
+        "jsdoc"
+      ],
+      "rules": {
+        "@angular-eslint/component-selector": [
+          "error",
+          {
+            "type": ["element", "attribute"],
+            "prefix": "app",
+            "style": "kebab-case"
+          }
+        ],
+        "@angular-eslint/directive-selector": [
+          "error",
+          {
+            "type": "attribute",
+            "prefix": "",
+            "style": "camelCase"
+          }
+        ],
+        "@angular-eslint/use-lifecycle-interface": "error",
+        "@typescript-eslint/consistent-indexed-object-style": "error",
+        "@typescript-eslint/dot-notation": "off",
+        "@typescript-eslint/explicit-function-return-type": [
+          "error",
+          {
+            "allowExpressions": true
+          }
+        ],
+        "@typescript-eslint/indent": ["error", 2],
+        "@typescript-eslint/naming-convention": [
+          "error",
+          // variableLike, memberLike, method
+          {
+            "selector": ["variableLike", "memberLike", "method"],
+            "format": ["camelCase"]
+          },
+          // Object literals: { ['Some-Variable']: 'some value' }
+          {
+            "selector": "objectLiteralProperty",
+            "format": null
+          },
+          // Constants
+          {
+            "selector": "variable",
+            "modifiers": ["const"],
+            "format": [
+              "camelCase",
+              "PascalCase",
+              "UPPER_CASE"
+            ]
+          },
+          // Class properties
+          {
+            "selector": "classProperty",
+            "format": ["camelCase", "PascalCase", "UPPER_CASE"]
+          },
+          // Private class property can have leading underscore (for getter/setter support)
+          {
+            "selector": "classProperty",
+            "modifiers": ["private"],
+            "format": null,
+            "leadingUnderscore": "allow"
+          },
+          // Function parameters
+          {
+            "selector": "parameter",
+            "format": ["camelCase"],
+            "leadingUnderscore": "allow"
+          },
+          {
+            "selector": "parameter",
+            "modifiers": ["destructured"],
+            "format": ["camelCase", "snake_case"],
+            "leadingUnderscore": "allow"
+          },
+          // Type names
+          {
+            "selector": "typeLike",
+            "format": ["PascalCase"]
+          },
+          // Type properties
+          {
+            "selector": "typeProperty",
+            "format": ["camelCase", "PascalCase", "snake_case"],
+            "leadingUnderscore": "allow"
+          },
+          // Enums
+          {
+            "selector": "enumMember",
+            "format": ["camelCase", "PascalCase"]
+          }
+        ],
+        "@typescript-eslint/no-explicit-any": [
+          "error",
+          {
+            "ignoreRestArgs": true
+          }
+        ],
+        "@typescript-eslint/no-extra-semi": "error",
+        "@typescript-eslint/no-implicit-any-catch": "error",
+        "@typescript-eslint/no-unnecessary-condition": "error",
+        "@typescript-eslint/prefer-nullish-coalescing": "error",
+        "@typescript-eslint/prefer-optional-chain": "error",
+        "@typescript-eslint/switch-exhaustiveness-check": "error",
+        "dot-notation": "off", // typescript-eslint enabled
+        "eol-last": ["error", "always"],
+        "eqeqeq": ["error", "always"],
+        "indent": "off", // typescript-eslint enabled
+        "jsdoc/no-types": "off",
+        "jsdoc/require-jsdoc": "off",
+        "jsdoc/require-param": "off",
+        "jsdoc/require-param-description": "off",
+        "jsdoc/require-param-type": "off",
+        "jsdoc/require-returns": "off",
+        "jsdoc/require-returns-description": "off",
+        "jsdoc/require-returns-type": "off",
+        "key-spacing": "error",
+        "lines-between-class-members": [
+          "error",
+          "always",
+          {
+            "exceptAfterSingleLine": true
+          }
+        ],
+        "no-extra-semi": "off", // typescript-eslint enabled
+        "object-shorthand": ["error", "properties"],
+        "prefer-arrow/prefer-arrow-functions": [
+          "error",
+          {
+            "allowStandaloneDeclarations": true
+          }
+        ],
+        "prefer-const": "error",
+        "prefer-object-spread": "error",
+        "quotes": [
+          "error",
+          "single",
+          {
+            "avoidEscape": true
+          }
+        ],
+        "require-await": "error"
+      }
+    },
+    {
+      "files": ["*.html"],
+      "extends": [
+        "plugin:@angular-eslint/template/recommended"
+      ],
+      "rules": {
+        "@angular-eslint/template/no-negated-async": "off",
+        "eol-last": ["error", "always"]
+      }
+    }
+  ]
+}
