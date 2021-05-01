@@ -3,6 +3,7 @@ import { NgModule } from '@angular/core';
 
 import { AppComponent } from './app.component';
 import { HelloWorldModule } from './hello-world/hello-world.module';
+import { DepTestModule } from './dep-test/dep-test.module';
 
 @NgModule({
   declarations: [
@@ -11,6 +12,7 @@ import { HelloWorldModule } from './hello-world/hello-world.module';
   imports: [
     BrowserModule,
     HelloWorldModule,
+    DepTestModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
